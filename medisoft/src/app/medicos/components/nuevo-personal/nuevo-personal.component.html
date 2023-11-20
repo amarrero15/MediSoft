@@ -1,0 +1,30 @@
+<div class="nuevo-paciente-container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-cargar-avatar [avatarType]="this.avatarType"></app-cargar-avatar>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el nombre del funcionario" [(ngModel)]="datosPersonal.nombre">
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Tipo de Personal</label>
+                <select class="form-select" id="tipo" aria-label="nivel del paciente" (change)="setTipo()">
+                    <option selected>Seleccione el área de trabajo</option>
+                    <option *ngFor="let tipo of tipoPersonal"  value="{{tipo.idTipo}}">{{tipo.descripcion}}</option>
+                </select>
+            </div>
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Email</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del funcionario" [(ngModel)]="datosPersonal.email">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button class="primaryButton" (click)="agregarPersonal()"> Guardar</button>
+        </div>
+    </div>
+</div>

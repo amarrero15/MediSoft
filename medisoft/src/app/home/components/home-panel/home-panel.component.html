@@ -1,0 +1,10 @@
+<div class="home-panel-container">
+    <div class="text-center">
+        <label class="title" for="">Bienvenido</label>
+    </div>
+    <div class="row text-center functions">
+        <div class="col-md-3" *ngFor="let function of functions">
+            <app-function-card [functionData]="function" (functionEvent)="open($event)"></app-function-card>
+        </div>
+    </div>
+</div>

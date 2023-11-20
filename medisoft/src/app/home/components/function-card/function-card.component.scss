@@ -1,0 +1,17 @@
+.image{
+    width: 5.9375rem;
+    //height: 7.4375rem;
+    height: 5.9375rem;
+    margin-top: 1.5rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 4px 16px rgba(28, 13, 4, 0.25));
+}
+.functionName{
+    color: var(--grayscale-gray-5, #6A6A6A);
+    text-align: center;
+    font-family: Nunito Sans Semibold;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}

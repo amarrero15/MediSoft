@@ -1,0 +1,15 @@
+.function-card{
+    width: 11.9375rem;
+    height: 11.25rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: 1px solid var(--grayscale-gray-3, #CDCDCD);
+    background: #FFFFFF;
+}
+.function-card:hover{
+    border: 1px solid var(--grayscale-gray-3, #343BBF);
+}
+.function-card:active{
+    border: 1px solid var(--grayscale-gray-3, #343BBF);
+    background: #D8D9F2;
+}

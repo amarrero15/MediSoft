@@ -1,0 +1,39 @@
+<div class="nuevo-paciente-container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center">
+                <img src="assets/png/home/consultas.png" alt="" class="image">
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+    
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Paciente</label>
+                <select class="form-select" id="pacientes" aria-label="nivel del paciente" (change)="setPaciente()">
+                    <option selected>Seleccione el nombre del paciente</option>
+                    <option *ngFor="let paciente of pacientes"  value="{{paciente.idPaciente}}">{{paciente.nombre}}</option>
+                </select>
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Médico</label>
+                <select class="form-select" id="medicos" aria-label="nivel del paciente" (change)="setMedico()">
+                    <option selected>Seleccione el nombre del médico</option>
+                    <option *ngFor="let medico of medicos"  value="{{medico.idPersonal}}">{{medico.nombre}}</option>
+                </select>
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Email</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" [(ngModel)]="this.datosConsulta.email">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button class="primaryButton" (click)="agendarConsulta()"> Guardar</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,10 @@
+<div class="avatar-container">
+    <div class="row text-center">
+        <img class="avatar" [src]="imageSrc" alt="">
+    </div>
+
+    <div class="row text-center" (click)="attachmentInput.click()">
+        <button class="attachmentButton">Añadir imagen</button>
+        <input #attachmentInput type="file" hidden accept="image/*" (change)="uploadResource($event)"> 
+    </div>
+</div>

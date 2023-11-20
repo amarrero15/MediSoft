@@ -1,0 +1,29 @@
+<div class="nuevo-paciente-container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-cargar-avatar [avatarType]="this.avatarType"></app-cargar-avatar>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre Medicamento" placeholder="Introduzca el nombre del medicamento" [(ngModel)]="datosMedicamento.nombre">
+            </div>
+    
+
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad" placeholder="Introduzca la cantidad de unidades" [(ngModel)]="datosMedicamento.cantidad">
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca el precio del medicamento" [(ngModel)]="datosMedicamento.precio">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button class="primaryButton" (click)="agregarMedicamento()"> Guardar</button>
+        </div>
+    </div>
+</div>

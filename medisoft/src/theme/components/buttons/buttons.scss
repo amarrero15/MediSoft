@@ -1,0 +1,32 @@
+.attachmentButton{
+    width: 14rem;
+    height: 2.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 30px;
+    font-family: Nunito Sans SemiBold;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #181B59;
+}
+.primaryButton{
+    width: 25.375rem;
+    height: 3.5625rem;
+    border: none;
+    border-radius: 30px;
+    background: #343BBF;
+    font-family: Nunito Sans SemiBold;
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #D8D9F2;
+}
+.primaryButton:hover{
+    background: #262B8C;
+}
+.primaryButton:focus{
+    background: #181B59;
+}

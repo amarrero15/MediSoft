@@ -1,0 +1,82 @@
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Paciente</label>
+                <select class="form-select" id="paciente" aria-label="nivel del paciente" (change)="setDatosConsulta()">
+                    <option selected>Seleccione el nombre del paciente</option>
+                    <option *ngFor="let consulta of consultas"  value="{{consulta.idPaciente}}">{{consulta.paciente}}</option>
+                </select>
+            </div>
+
+            <div *ngIf="visibleData">
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Edad</label>
+                    <input disabled="" type="number" class="form-control" id="edad" placeholder="0" [(ngModel)]="datosPaciente.edad">
+                </div>
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Nivel</label>
+                    <input disabled="" type="text" class="form-control" id="nivel" placeholder="" [(ngModel)]="datosPaciente.nivel">
+                </div>
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Email</label>
+                    <input disabled type="email" class="form-control" id="emai" placeholder="0" [(ngModel)]="datosPaciente.email">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Valoración inicial</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Diagnóstico médico</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Observaciones</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div>
+                <button class="primaryButton">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class= "title text-center"> Receta Médica</div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3 email">
+                    <label for="exampleFormControlTextarea1" class="form-label">Medicamento</label>
+                    <select class="form-select" id="medicamentos" aria-label="nivel del paciente" (change)="setMedicamento()">
+                        <option selected>Seleccione el medicamento del paciente</option>
+                        <option *ngFor="let medicamento of medicamentos"  value="{{medicamento.idMedicamento}}">{{medicamento.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Cantidad</label>
+                    <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca la cantidad de unidaddes"[(ngModel)]="medicamento.cantidad">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Dosis recomendada</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="medicamento.dosis"></textarea>
+                </div>
+                <div>
+                    <button class="primaryButton" (click)="recetarMedicamento()">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="visibleReceta">
+        <app-lista-receta [receta]="this.receta"></app-lista-receta>
+    </div>
+</div>

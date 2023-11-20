@@ -1,0 +1,35 @@
+.form-label{
+    font-family: Nunito Sans Bold;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #181B59;
+
+}
+.form-control{
+    width: 25rem;
+    height: 3.5rem;
+    background: #F8F8F8;
+    /* Grayscale/Gray_3 */
+    border: 1px solid #D8D9F2;
+    border-radius: 8px;
+    //font-family: 'Inter Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #0A0B26;  
+}
+.form-control:focus{
+    border: 1.5px solid #694732;
+}
+.form-select{
+    width: 25rem;
+    height: 3.5rem; 
+}

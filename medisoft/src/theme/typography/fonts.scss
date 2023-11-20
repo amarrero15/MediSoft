@@ -1,0 +1,36 @@
+/*  Font Styles
+    Developer: Alfredo Marrero Viquez
+    Created:21/01/2023
+    LastUpdated
+*/
+
+/*Anton Typography*/
+/*
+@font-face{
+    font-family: 'Anton Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../assets/fonts/anton/Anton-Regular.ttf') format('opentype');
+}
+*/
+/*Nunito Sans Typography*/
+@font-face{
+    font-family: 'Nunito Sans Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../assets/fonts/nunito-sans/NunitoSans-Regular.ttf') format('opentype');
+}
+
+@font-face{
+    font-family: 'Nunito Sans Semibold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../assets/fonts/nunito-sans/NunitoSans-SemiBold.ttf') format('opentype');
+}
+
+@font-face{
+    font-family: 'Nunito Sans Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../assets/fonts/nunito-sans/NunitoSans-Bold.ttf') format('opentype');
+}
