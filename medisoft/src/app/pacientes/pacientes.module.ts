@@ -15,6 +15,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import { ImagenesModule } from '../imagenes/imagenes.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ImagenesModule } from '../imagenes/imagenes.module';
     ,MatTabsModule
     ,MatTableModule
     ,ReactiveFormsModule
+    ,SharedModule
   ]
 })
 export class PacientesModule { }
