@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePanelComponent } from './components/home-panel/home-panel.component';
 import { FunctionCardComponent } from './components/function-card/function-card.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -18,7 +19,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     HomePageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

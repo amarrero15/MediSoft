@@ -14,6 +14,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import { ListaMedicamentosComponent } from './components/lista-medicamentos/lista-medicamentos.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ListaMedicamentosComponent } from './components/lista-medicamentos/list
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    SharedModule
   ]
 })
 export class FarmaciaModule { }

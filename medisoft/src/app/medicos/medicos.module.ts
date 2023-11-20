@@ -15,6 +15,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import { ImagenesModule } from '../imagenes/imagenes.module';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     ,MatTabsModule
     ,MatTableModule
     ,ImagenesModule
+    ,SharedModule
   ]
 })
 export class MedicosModule { }

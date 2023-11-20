@@ -15,6 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { DiagnosticoComponent } from './components/diagnostico/diagnostico.component';
 import { ListaRecetaComponent } from './components/lista-receta/lista-receta.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ListaRecetaComponent } from './components/lista-receta/lista-receta.com
     MatPaginatorModule,
     MatSortModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    SharedModule
   ]
 })
 export class ConsultasModule { }
