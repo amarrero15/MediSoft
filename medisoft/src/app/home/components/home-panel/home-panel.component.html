@@ -4,7 +4,7 @@
         <label class="title" for="">Bienvenido</label>
     </div>
     <div class="row text-center functions">
-        <div class="col-md-3" *ngFor="let function of functions">
+        <div class="col-md-3" *ngFor="let function of functions" style="margin-bottom: 1rem;">
             <app-function-card [functionData]="function" (functionEvent)="open($event)"></app-function-card>
         </div>
     </div>

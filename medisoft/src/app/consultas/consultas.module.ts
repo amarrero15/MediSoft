@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { DiagnosticoComponent } from './components/diagnostico/diagnostico.component';
 import { ListaRecetaComponent } from './components/lista-receta/lista-receta.component';
 import { SharedModule } from '../shared/shared.module';
+import { EditarConsultaComponent } from './components/editar-consulta/editar-consulta.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SharedModule } from '../shared/shared.module';
     ConsultasPageComponent,
     DiagnosticoComponent,
     ListaRecetaComponent,
+    EditarConsultaComponent,
 
   ],
   imports: [

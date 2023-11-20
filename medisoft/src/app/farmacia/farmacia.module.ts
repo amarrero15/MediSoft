@@ -15,6 +15,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import { ListaMedicamentosComponent } from './components/lista-medicamentos/lista-medicamentos.component';
 import { SharedModule } from '../shared/shared.module';
+import { EditarMedicamentoComponent } from './components/editar-medicamento/editar-medicamento.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SharedModule } from '../shared/shared.module';
     NuevoMedicamentoComponent,
     PanelMedicamentosComponent,
     MedicamentosPageComponent,
-    ListaMedicamentosComponent
+    ListaMedicamentosComponent,
+    EditarMedicamentoComponent
   ],
   exports: [
     NuevoMedicamentoComponent,

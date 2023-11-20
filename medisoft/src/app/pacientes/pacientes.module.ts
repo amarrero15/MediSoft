@@ -17,6 +17,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ImagenesModule } from '../imagenes/imagenes.module';
 import { SharedModule } from '../shared/shared.module';
 
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule
     ,FormsModule
     ,ImagenesModule
+    ,MatDialogModule
     ,MatFormFieldModule
     ,MatIconModule
     ,MatInputModule

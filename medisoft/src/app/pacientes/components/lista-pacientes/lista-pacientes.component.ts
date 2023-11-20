@@ -4,6 +4,16 @@ import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { IPaciente } from '../../../shared/interfaces/i-paciente';
 import { PacientesService } from 'src/app/shared/services/pacientes.service';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+} from '@angular/material/dialog';
+import { EditarPacienteComponent } from '../editar-paciente/editar-paciente.component';
 @Component({
   selector: 'app-lista-pacientes',
   templateUrl: './lista-pacientes.component.html',
@@ -15,7 +25,7 @@ export class ListaPacientesComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   pacientes:any=[];
-  constructor(private pacienteService:PacientesService) {
+  constructor(private pacienteService:PacientesService, public dialog: MatDialog) {
     // Assign the data to the data source for the table to render
     this.pacienteService.getpacientes().subscribe(res=>{
       this.dataSource =new MatTableDataSource(res as IPaciente[]);
@@ -43,6 +53,25 @@ export class ListaPacientesComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
-  deletePaciente(paciente: any){}
+
+  editarPaciente(element: any): void {
+    console.log(element);
+    
+    const dialogRef = this.dialog.open(EditarPacienteComponent, { panelClass:'nuevo-paciente-container',
+      data: element,
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.animal = result;
+    });
+    
+  }
+  deletePaciente(paciente: any){
+    console.log(paciente);
+    this.pacienteService.deletePaciente(paciente.idPaciente).subscribe(res=>{
+      console.log(res);
+    })
+  }
 }

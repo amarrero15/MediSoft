@@ -6,6 +6,8 @@ import { PacientesPageComponent } from './pacientes/pages/pacientes-page/pacient
 import { MedicamentosPageComponent } from './farmacia/pages/medicamentos-page/medicamentos-page.component';
 import { ConsultasPageComponent } from './consultas/pages/consultas-page/consultas-page.component';
 import { PersonalPageComponent } from './medicos/pages/personal-page/personal-page.component';
+import { AjustesPageComponent } from './ajustes/pages/ajustes-page/ajustes-page.component';
+import { ReportesPageComponent } from './reportes/pages/reportes-page/reportes-page.component';
 
 const routes: Routes = [
   {
@@ -13,12 +15,14 @@ const routes: Routes = [
     redirectTo: 'autenticacion',
     pathMatch: 'full'
   },
+  {path:'ajustes', component:AjustesPageComponent},
   {path:'autenticacion', component:AuthPageComponent},
   {path:'consultas', component:ConsultasPageComponent},
   {path:'farmacia', component:MedicamentosPageComponent},
   {path:'inicio', component:HomePageComponent},
   {path:'pacientes', component:PacientesPageComponent},
-  {path:'personal', component:PersonalPageComponent}
+  {path:'personal', component:PersonalPageComponent},
+  {path:'reportes', component:ReportesPageComponent},
 ];
 
 @NgModule({

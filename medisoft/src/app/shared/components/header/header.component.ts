@@ -12,7 +12,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout(){}
+  logout(){
+    this.route.navigate(['autenticacion']);
+  }
 
   goHome(){
     this.route.navigate(['inicio']);

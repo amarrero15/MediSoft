@@ -31,7 +31,7 @@
 
       <ng-container matColumnDef="editar">
         <th mat-header-cell *matHeaderCellDef class="heading" style="text-align: center;"> Editar</th>
-        <td mat-cell class="text-center" *matCellDef="let element"> <button class="tableButton"><mat-icon>edit</mat-icon></button></td>
+        <td mat-cell class="text-center" *matCellDef="let element"> <button class="tableButton" (click)="editarMedicamento(element)"><mat-icon>edit</mat-icon></button></td>
       </ng-container>
 
       <ng-container matColumnDef="eliminar">

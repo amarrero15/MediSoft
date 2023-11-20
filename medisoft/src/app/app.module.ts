@@ -10,20 +10,21 @@ import { PacientesModule } from './pacientes/pacientes.module';
 import { FarmaciaModule } from './farmacia/farmacia.module';
 import { ConsultasModule } from './consultas/consultas.module';
 import { MedicosModule } from './medicos/medicos.module';
-/*
+
 import { firebaseConfig } from 'src/environments/environment.prod';
 import {AngularFireModule} from '@angular/fire/compat'
+
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
-import {AngularFirestoreModule} from '@angular/fire/compat/firestore';*/
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-   //AngularFireModule.initializeApp(firebaseConfig),
-    //AngularFireAuthModule,
-    //AngularFirestoreModule,
+   AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     AuthModule,
     BrowserModule,
     ConsultasModule,

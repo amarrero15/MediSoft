@@ -1,1 +1,36 @@
-<p>editar-paciente works!</p>
+<div class="nuevo-paciente-container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-cargar-avatar [avatarType]="this.avatarType"></app-cargar-avatar>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el nombre del paciente" [(ngModel)]="data.nombre">
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Nivel</label>
+                <select class="form-select" id="nivel" aria-label="nivel del paciente" (change)="setNivel()">
+                    <option selected>Seleccione el nivel del paciente</option>
+                    <option *ngFor="let nivel of niveles"  value="{{nivel.idNivel}}">{{nivel.descripcion}}</option>
+                </select>
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Edad</label>
+                <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca la edad del paciente" [(ngModel)]="data.edad">
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Email</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" [(ngModel)]="data.email">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button class="primaryButton" (click)="agregarPaciente()"> Guardar</button>
+        </div>
+    </div>
+</div>

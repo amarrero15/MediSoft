@@ -15,4 +15,11 @@ export class PacientesService {
   getpacientes(){
     return this.hhtp.get(`${this.API_URI}/pacientes`)
   }
+
+  updatePacientes(datosPaciente: any){
+    return this.hhtp.put(`${this.API_URI}/pacientes`, datosPaciente);
+  }
+  deletePaciente(idPaciente:any){
+    return this.hhtp.delete(`${this.API_URI}/pacientes/${idPaciente}`);
+  }
 }
