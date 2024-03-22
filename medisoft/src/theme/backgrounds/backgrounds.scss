@@ -1,5 +1,6 @@
 .auth-background{
     height: auto;
-    background: linear-gradient(to right, #0A0B26, #343BBF,#262B8C,#181B59,#D8D9F2);
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,86,0.9780287114845938) 51%, rgba(0,212,255,1) 100%);
     background-size: cover;
 }

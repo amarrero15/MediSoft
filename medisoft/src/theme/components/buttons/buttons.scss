@@ -16,7 +16,7 @@
     height: 3.5625rem;
     border: none;
     border-radius: 30px;
-    background: #343BBF;
+    background: #097956;
     font-family: Nunito Sans SemiBold;
     font-size: 1.625rem;
     font-style: normal;
@@ -25,8 +25,14 @@
     color: #D8D9F2;
 }
 .primaryButton:hover{
-    background: #262B8C;
+    background: #00d4ff;
 }
 .primaryButton:focus{
-    background: #181B59;
+    background: #0f9d16;
+}
+
+.pdfButton{
+    width: 4rem;
+    height: 4rem;
+    border: none;
 }

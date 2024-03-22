@@ -1,0 +1,64 @@
+<div class="nuevo-paciente-container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el nombre del paciente" [(ngModel)]="datosUsuario.nombre">
+            </div>
+    
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Tipo de usuario</label>
+                <select class="form-select" id="tipoUsuario" aria-label="nivel del paciente" (change)="setTipo()">
+                    <option selected>Seleccione el nivel del paciente</option>
+                    <option *ngFor="let tipo of tipos"  value="{{tipo.idTipo}}">{{tipo.descripcion}}</option>
+                </select>
+            </div>
+    
+    
+            <div class="mb-3 email">
+                <label for="nombrePaciente" class="form-label">Email</label>
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" (change)="validarEmail()" [(ngModel)]="datosUsuario.email">
+                <div *ngIf="emailValid"style="margin-left: 0rem;" >
+                    <label [style.color]="emailColor" for="">
+                        Por favor ingrese un correo electrónico valido.
+                    </label>
+                    
+                </div>
+            </div>
+            <div class="mb-3 code">
+                <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="*****" (change)="validatePasswordLength()" (change)="validatePasswordUpper()" (change)="validateNumberPassword()" [(ngModel)]="datosUsuario.password">
+                <div class="mb-3 form-margin" style="margin-left: 0rem;">
+                    <label [style.color]="lengthColor" class="errorMessage">Debe tener al menos 8 caracteres</label>
+                  </div>
+        
+                  <div class="mb-3 form-margin" style="margin-left: 0rem;">
+                      <label [style.color]="upperColor" class="errorMessage">Debe contener al menos una letra en mayúscula</label>
+                  </div>
+        
+                  <div class="mb-3 form-margin" style="margin-left: 0rem;">
+                      <label [style.color]="numberColor" class="errorMessage">Debe contener al menos un número</label>
+                  </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="passwordConfirmation" placeholder="****" (change)="confirmPassword()" [(ngModel)]="this.samePassword">
+            </div>
+            <div class="mb-3 form-margin" style="margin-left: 0rem;">
+                <label *ngIf="passwordConfirmation" [style.color]="passwordColor" class="errorMessage">Las contraseñas coinciden</label>
+            </div>
+            <div class="mb-3 form-margin" style="margin-left: 0rem;">
+                <label *ngIf="!passwordConfirmation" [style.color]="passwordColor" class="errorMessage">Las contraseñas no coinciden</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button class="primaryButton" (click)="agregarUsuario()"> Guardar</button>
+        </div>
+    </div>
+</div>

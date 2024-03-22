@@ -12,8 +12,8 @@
             <div class="mb-3 email">
                 <label for="exampleFormControlTextarea1" class="form-label">Nivel</label>
                 <select class="form-select" id="nivel" aria-label="nivel del paciente" (change)="setNivel()">
-                    <option selected>Seleccione el nivel del paciente</option>
-                    <option *ngFor="let nivel of niveles"  value="{{nivel.idNivel}}">{{nivel.descripcion}}</option>
+                    <option value="0">Seleccione el nivel del paciente</option>
+                    <option *ngFor="let nivel of niveles"  [value]="nivel.idNivel" >{{nivel.descripcion}}</option>
                 </select>
             </div>
     
@@ -24,13 +24,19 @@
     
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Email</label>
-                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" [(ngModel)]="data.email">
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" (change)="validarEmail()" [(ngModel)]="data.email">
+                <div *ngIf="emailValid"style="margin-left: 0rem;" >
+                    <label [style.color]="emailColor" for="">
+                        Por favor ingrese un correo electrónico valido.
+                    </label>
+                    
+                </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="text-center">
-            <button class="primaryButton" (click)="agregarPaciente()"> Guardar</button>
+            <button class="primaryButton" (click)="actualizarPaciente()"> Guardar</button>
         </div>
     </div>
 </div>

@@ -1,0 +1,21 @@
+<div class="popup-container">
+    <div class="">
+        <i id="close" class="icon" (click)="close()"></i>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <label for="" class="title">{{data.title}}</label>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row">
+        <div class="text-center">
+            <p class="message">{{data.messagge}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button (click)="close()" class="primaryButton">{{data.command}}</button>
+        </div>
+    </div>
+</div>

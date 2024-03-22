@@ -68,10 +68,14 @@ export class ListaPacientesComponent implements AfterViewInit {
     });
     
   }
-  deletePaciente(paciente: any){
+  deletePaciente(paciente: any, index: any){
     console.log(paciente);
     this.pacienteService.deletePaciente(paciente.idPaciente).subscribe(res=>{
       console.log(res);
+      this.dataSource.data.splice(index, 1);
+      this.pacienteService.getpacientes().subscribe(res=>{
+        this.dataSource =new MatTableDataSource(res as IPaciente[]);
+      })
     })
   }
 }

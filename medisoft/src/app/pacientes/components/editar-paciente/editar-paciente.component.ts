@@ -6,12 +6,9 @@ import {
   MatDialog,
   MAT_DIALOG_DATA,
   MatDialogRef,
-  MatDialogTitle,
-  MatDialogContent,
-  MatDialogActions,
-  MatDialogClose,
-  
 } from '@angular/material/dialog';
+import { PopupComponent } from 'src/app/shared/components/popup/popup.component';
+import { FormControl, FormGroup } from '@angular/forms'
 @Component({
   selector: 'app-editar-paciente',
   templateUrl: './editar-paciente.component.html',
@@ -27,20 +24,29 @@ export class EditarPacienteComponent implements OnInit {
     edad:0,
     email:'',
   }
+  emailColor='#6C757D';
+  emailValid=false;
+  resetNivel = new FormControl('');
   constructor(
     private nivelesService:NivelesService, 
     private pacienteService:PacientesService,
     public dialogRef: MatDialogRef<EditarPacienteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IPaciente,) { }
+    @Inject(MAT_DIALOG_DATA) public data: IPaciente,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getNiveles();
   }
 
-  agregarPaciente(){
-    this.pacienteService.updatePacientes(this.data).subscribe(res=>{
-      console.log(res);
-    });
+  actualizarPaciente(){
+    console.log(this.data);
+    if(this.data.nombre!=''&&this.data.idNivel!=0 &&this.data.edad!=0 &&this.data.email!=''&&this.emailValid===false){
+      this.pacienteService.updatePacientes(this.data).subscribe(res=>{
+        this.operacionExitosa();
+      });
+    }else{
+      this.operacionFallida();
+    }
+
   }
 
   getNiveles(){
@@ -53,6 +59,55 @@ export class EditarPacienteComponent implements OnInit {
     var e = document.getElementById("nivel") as HTMLSelectElement;
     var value = e.value;
     var text = e.options[e.selectedIndex].text;
-    this.datosPaciente.idNivel=parseInt(value);
+    this.data.idNivel=parseInt(value);
+  }
+
+  operacionExitosa(): void {
+    let data={
+      title:'Actualización Completa',
+      messagge:'información actualzida exitosamente',
+      command:'Continuar'
+    }
+    const dialogRef = this.dialog.open(PopupComponent, { panelClass:'popup-container',
+      data: data,
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      /*
+      this.datosPaciente={
+        idPaciente:0,
+        nombre:'',
+        idNivel:0,
+        edad:0,
+        email:'',
+      }*/
+    });
+    
+  }
+
+  operacionFallida(): void {
+    let data={
+      title:'Error',
+      messagge:'La información no se actualizó exitosamente. Por favor revise  los datos modificados.',
+      command:'Continuar'
+    }
+    const dialogRef = this.dialog.open(PopupComponent, { panelClass:'popup-container',
+      data: data,
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+    
+  }
+
+  validarEmail(){
+    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(this.data.email)){
+      this.emailValid=false
+    }else{
+      this.emailColor='#E63256'
+      this.emailValid=true;
+    }
   }
 }

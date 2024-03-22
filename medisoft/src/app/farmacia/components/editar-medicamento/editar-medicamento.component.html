@@ -12,12 +12,22 @@
 
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Cantidad</label>
-                <input type="number" class="form-control" id="cantidad" placeholder="Introduzca la cantidad de unidades" [(ngModel)]="data.cantidad">
+                <input type="number" class="form-control" id="cantidad" placeholder="Introduzca la cantidad de unidades" (change)="setCantidad()" [(ngModel)]="data.cantidad">
+                <div *ngIf="medicamentoValid"style="margin-left: 0rem;" >
+                    <label [style.color]="medicamentoColor" for="">
+                        Por favor ingrese cantidades mayores a 0.
+                    </label>
+                </div>
             </div>
     
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca el precio del medicamento" [(ngModel)]="data.precio">
+                <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca el precio del medicamento" (change)="setPrecio()" [(ngModel)]="data.precio">
+                <div *ngIf="montoMedicamentoValid"style="margin-left: 0rem;" >
+                    <label [style.color]="montoMedicamentoColor" for="">
+                        Por favor un precio mayor a 0.
+                    </label>
+                </div>
             </div>
         </div>
     </div>

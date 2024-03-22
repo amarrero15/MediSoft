@@ -26,4 +26,11 @@ export class ConsultaService {
   getPaciente(idPaciente:any){
     return this.http.get(`${this.API_URI}/pacientes/${idPaciente}`)
   }
+
+  updateConsulta(datosConsulta: any){
+    return this.http.put(`${this.API_URI}/consultas`, datosConsulta);
+  }
+  deleteConsulta(idConsulta:any){
+    return this.http.delete(`${this.API_URI}/consultas/${idConsulta}`);
+  }
 }

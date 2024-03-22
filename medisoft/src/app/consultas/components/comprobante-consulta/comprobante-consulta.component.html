@@ -1,0 +1,50 @@
+<div id="htmlData" class="comprobante-container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3 email">
+                <label for="exampleFormControlTextarea1" class="form-label">Paciente</label>
+                <input type="text" disabled class="form-control" id="nombre Paciente" placeholder="nombre paciente"[(ngModel)]="data.nombre">
+            </div>
+
+            <div>
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Edad</label>
+                    <input disabled="" type="number" class="form-control" id="edad" placeholder="0" [(ngModel)]="data.edad">
+                </div>
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Nivel</label>
+                    <input disabled="" type="text" class="form-control" id="nivel" placeholder="" [(ngModel)]="data.nivel">
+                </div>
+                <div class="mb-3 email">
+                    <label for="nombrePaciente" class="form-label">Email</label>
+                    <input disabled type="email" class="form-control" id="emai" placeholder="0" [(ngModel)]="data.email">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Valoración inicial</label>
+                <textarea disabled class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="data.valoracion"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Diagnóstico médico</label>
+                <textarea disabled class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="data.diagnosticoMedico"></textarea>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Observaciones</label>
+                <textarea disabled class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="data.obervaciones"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <app-receta-medica [receta]="data.receta"></app-receta-medica>
+    </div>
+</div>
+<div class="textcenter">
+    <button class="primaryButton" (click)="downloadPDF()">Guardar</button>
+</div>

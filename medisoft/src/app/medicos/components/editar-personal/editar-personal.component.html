@@ -18,13 +18,18 @@
             </div>
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Email</label>
-                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del funcionario" [(ngModel)]="data.email">
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del funcionario" (change)="validarEmail" [(ngModel)]="data.email">
+                <div *ngIf="emailValid"style="margin-left: 0rem;" >
+                    <label [style.color]="emailColor" for="">
+                        Por favor ingrese un correo electrónico valido.
+                    </label>
+                </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="text-center">
-            <button class="primaryButton" (click)="agregarPersonal()"> Guardar</button>
+            <button class="primaryButton" (click)="actualizarPersonal()"> Guardar</button>
         </div>
     </div>
 </div>

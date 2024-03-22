@@ -21,7 +21,7 @@ import { EditarConsultaComponent } from '../editar-consulta/editar-consulta.comp
   styleUrls: ['./lista-consultas.component.scss']
 })
 export class ListaConsultasComponent implements AfterViewInit {
-  displayedColumns: string[] = ['idConsulta', 'paciente', 'medico', 'editar', 'eliminar'];
+  displayedColumns: string[] = ['idConsulta','fecha', 'paciente', 'medico','status', 'editar', 'eliminar'];
   dataSource!: MatTableDataSource<IConsulta>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -67,6 +67,13 @@ export class ListaConsultasComponent implements AfterViewInit {
     
   }
   
-  deletePaciente(paciente: any){}
+  deleteConsulta(consulta: any, index:any){
+    this.consultaService.deleteConsulta(consulta.idConsulta).subscribe(res=>{
+      this.dataSource.data.splice(index, 1);
+      this.consultaService.getConsultas().subscribe(res=>{
+        this.dataSource =new MatTableDataSource(res as IConsulta[]);
+      })
+    })
+  }
 
 }

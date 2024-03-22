@@ -15,19 +15,19 @@ export class CargarAvatarComponent implements OnInit {
   ngOnInit(): void {
     switch(this.avatarType) { 
       case 'pacientes': { 
-        this.imageSrc='assets/png/home/pacientes.png';
+        this.imageSrc='assets/png/home/clientes.png';
          break; 
       } 
       case 'medicos': { 
-        this.imageSrc='assets/png/home/medicos.png';
+        this.imageSrc='assets/png/home/terapeuta.png';
          break; 
       } 
       case 'farmacia': { 
-        this.imageSrc='assets/png/home/farmacia.png';
+        this.imageSrc='assets/png/home/productos.png';
          break; 
       } 
       default: { 
-        this.imageSrc='assets/png/home/consultas.png';
+        this.imageSrc='assets/png/home/reservaciones.png';
          break; 
       } 
    } 

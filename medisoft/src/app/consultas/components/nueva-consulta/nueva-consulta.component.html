@@ -2,23 +2,32 @@
     <div class="row">
         <div class="col-md-6">
             <div class="text-center">
-                <img src="assets/png/home/consultas.png" alt="" class="image">
+                <img src="assets/png/home/reservaciones.png" alt="" class="image">
             </div>
             
         </div>
         <div class="col-md-6">
+            <div class="mb-3 email">
+                <mat-form-field class="datePicker" appearance="outline">
+                    <mat-label class="dateTitle form-label">Fecha de la reservación</mat-label>
+                    <input class="date"  matInput [matDatepicker]="picker1" [formControl]="date" [min]="todayDate" [(ngModel)]="this.datosConsulta.fechaConsulta" (dateChange)="dateValueChange(date.value)" >
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                    <mat-hint> formato de fecha: MM/DD/YYYY</mat-hint>
+                </mat-form-field>
+            </div>
     
             <div class="mb-3 email">
-                <label for="exampleFormControlTextarea1" class="form-label">Paciente</label>
-                <select class="form-select" id="pacientes" aria-label="nivel del paciente" (change)="setPaciente()">
+                <label for="exampleFormControlTextarea1" class="form-label">Cliente</label>
+                <select class="form-select" id="pacientes" aria-label="nivel del cliente" (change)="setPaciente()">
                     <option selected>Seleccione el nombre del paciente</option>
-                    <option *ngFor="let paciente of pacientes"  value="{{paciente.idPaciente}}">{{paciente.nombre}}</option>
+                    <option *ngFor="let paciente of pacientes; let i=index"  value="{{paciente.idPaciente}}" >{{paciente.nombre}}</option>
                 </select>
             </div>
     
             <div class="mb-3 email">
-                <label for="exampleFormControlTextarea1" class="form-label">Médico</label>
-                <select class="form-select" id="medicos" aria-label="nivel del paciente" (change)="setMedico()">
+                <label for="exampleFormControlTextarea1" class="form-label">Colaborador</label>
+                <select class="form-select" id="medicos" aria-label="nivel del colaborador" (change)="setMedico()">
                     <option selected>Seleccione el nombre del médico</option>
                     <option *ngFor="let medico of medicos"  value="{{medico.idPersonal}}">{{medico.nombre}}</option>
                 </select>
@@ -26,7 +35,13 @@
     
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Email</label>
-                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" [(ngModel)]="this.datosConsulta.email">
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del cliente" (change)="validarEmail()" [(ngModel)]="this.datosConsulta.email">
+                <div *ngIf="emailValid"style="margin-left: 0rem;" >
+                    <label [style.color]="emailColor" for="">
+                        Por favor ingrese un correo electrónico valido.
+                    </label>
+                    
+                </div>
             </div>
         </div>
     </div>

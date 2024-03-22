@@ -2,5 +2,8 @@ export interface IConsulta {
     idConsulta:number;
     idPaciente:number;
     idMedico:number;
-    email:string
+    fechaConsulta:Date;
+    email:string,
+    idStatus:number;
+    costo:number
 }

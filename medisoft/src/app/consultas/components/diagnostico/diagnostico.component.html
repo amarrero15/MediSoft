@@ -1,11 +1,11 @@
-<div>
+<div >
     <div class="row">
         <div class="col-md-4">
             <div class="mb-3 email">
                 <label for="exampleFormControlTextarea1" class="form-label">Paciente</label>
                 <select class="form-select" id="paciente" aria-label="nivel del paciente" (change)="setDatosConsulta()">
                     <option selected>Seleccione el nombre del paciente</option>
-                    <option *ngFor="let consulta of consultas"  value="{{consulta.idPaciente}}">{{consulta.paciente}}</option>
+                    <option *ngFor="let consulta of consultas"  value="{{consulta.idPaciente}}">{{consulta.nombre}}</option>
                 </select>
             </div>
 
@@ -28,22 +28,24 @@
         <div class="col-md-4">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Valoración inicial</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="diagnostico.valoracion"></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Diagnóstico médico</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="diagnostico.diagnosticoMedico"></textarea>
             </div>
         </div>
         <div class="col-md-4">
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Observaciones</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="diagnostico.observaciones"></textarea>
             </div>
+            <!--
             <div>
-                <button class="primaryButton">Guardar</button>
+                <button class="primaryButton" (click)="downloadPDF()">Guardar</button>
             </div>
+            -->
         </div>
     </div>
     <div class="row">
@@ -79,4 +81,8 @@
     <div class="row" *ngIf="visibleReceta">
         <app-lista-receta [receta]="this.receta"></app-lista-receta>
     </div>
+</div>
+
+<div class="text-center">
+    <button class="primaryButton" (click)="generarComprobante()">Generar Comprobante</button>
 </div>

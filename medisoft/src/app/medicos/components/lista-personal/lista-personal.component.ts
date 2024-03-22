@@ -20,7 +20,7 @@ import { EditarPersonalComponent } from '../editar-personal/editar-personal.comp
   styleUrls: ['./lista-personal.component.scss']
 })
 export class ListaPersonalComponent implements AfterViewInit {
-  displayedColumns: string[] = ['idPersonal', 'nombre', 'area', 'status', 'editar', 'eliminar'];
+  displayedColumns: string[] = ['idPersonal', 'nombre', 'area','email', 'status', 'editar', 'eliminar'];
   dataSource!: MatTableDataSource<IPersonalMedico>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -66,5 +66,12 @@ export class ListaPersonalComponent implements AfterViewInit {
     
   }
   
-  deletePaciente(paciente: any){}
+  deletePersonal(personal: any, index: any){
+    this.personalService.deletePersonal(personal.idPersonal).subscribe(res=>{
+      this.dataSource.data.splice(index, 1);
+      this.personalService.getPersonal().subscribe(res=>{
+        this.dataSource =new MatTableDataSource(res as IPersonalMedico[]);
+      })
+    })
+  }
 }

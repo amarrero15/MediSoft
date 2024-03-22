@@ -16,12 +16,19 @@ import {AngularFireModule} from '@angular/fire/compat'
 
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { ReportesModule } from './reportes/reportes.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AjustesModule } from './ajustes/ajustes.module';
+
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AjustesModule,
    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
@@ -34,7 +41,8 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
     PacientesModule,
     MedicosModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReportesModule,NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

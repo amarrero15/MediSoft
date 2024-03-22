@@ -15,4 +15,11 @@ export class FarmaciaService {
   getMedicamentos(){
     return this.hhtp.get(`${this.API_URI}/medicamentos`)
   }
+
+  updateMedicamento(datosMedicamento: any){
+    return this.hhtp.put(`${this.API_URI}/medicamentos`, datosMedicamento);
+  }
+  deleteMedicamento(idMedicamento:any){
+    return this.hhtp.delete(`${this.API_URI}/medicamentos/${idMedicamento}`);
+  }
 }

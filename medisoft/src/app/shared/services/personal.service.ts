@@ -18,4 +18,11 @@ export class PersonalService {
   getTipoPersonal(){
     return this.hhtp.get(`${this.API_URI}/personal/tipo`)
   }
+
+  updatePersonal(datosPersonal: any){
+    return this.hhtp.put(`${this.API_URI}/personal`, datosPersonal);
+  }
+  deletePersonal(idPersonal:any){
+    return this.hhtp.delete(`${this.API_URI}/personal/${idPersonal}`);
+  }
 }

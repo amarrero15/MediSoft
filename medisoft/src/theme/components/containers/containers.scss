@@ -8,10 +8,14 @@
     background: #FFFFFF;
     border-radius: 20px;
 }
+.comporbante-container{
+    width: max-content;
+    height: max-content;
+}
 .header-container{
     width: 100%;
     height: 3rem;
-    background: #181B59;;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,86,0.9780287114845938) 51%, rgba(0,212,255,1) 100%);
 
 }
 .home-panel-container{
@@ -22,4 +26,23 @@
 .nuevo-paciente-container{
     width: 100%;
     margin-top: 4rem;
+}
+.password-recovery-container{
+    width: 36.875rem;
+    width: auto;
+    height: 24.25rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+.popup-container{
+    width: 29.4375rem;
+    width: auto;
+    height: 15.25rem;
+    height: auto;
+    border-radius: 0.25rem;
+    background: #FFF;
 }

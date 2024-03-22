@@ -1,0 +1,32 @@
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="medicamento">
+        <th mat-header-cell *matHeaderCellDef  class="heading" style="text-align:center;"> Medicamento</th>
+        <td mat-cell  *matCellDef="let row" class="tableInfo"> {{row.medicamento}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef  class="heading" style="text-align: center;"> Cantidad </th>
+        <td mat-cell *matCellDef="let row" class="tableInfo"> {{row.cantidad}}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="dosis">
+        <th mat-header-cell *matHeaderCellDef  class="heading" style="text-align: center;"> Dosis </th>
+        <td mat-cell *matCellDef="let row" class="tableInfo"> {{row.dosis}} </td>
+      </ng-container>
+  
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>

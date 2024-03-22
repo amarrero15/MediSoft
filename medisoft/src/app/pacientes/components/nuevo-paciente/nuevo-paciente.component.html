@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el nombre del paciente" [(ngModel)]="datosPaciente.nombre">
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el nombre del cliente" [(ngModel)]="datosPaciente.nombre">
             </div>
     
             <div class="mb-3 email">
@@ -19,12 +19,18 @@
     
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca la edad del paciente" [(ngModel)]="datosPaciente.edad">
+                <input type="number" class="form-control" id="nombre Paciente" placeholder="Introduzca la edad del cliente" [(ngModel)]="datosPaciente.edad">
             </div>
     
             <div class="mb-3 email">
                 <label for="nombrePaciente" class="form-label">Email</label>
-                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del paciente" [(ngModel)]="datosPaciente.email">
+                <input type="text" class="form-control" id="nombre Paciente" placeholder="Introduzca el email del cliente" (change)="validarEmail()" [(ngModel)]="datosPaciente.email">
+                <div *ngIf="emailValid"style="margin-left: 0rem;" >
+                    <label [style.color]="emailColor" for="">
+                        Por favor ingrese un correo electrónico valido.
+                    </label>
+                    
+                </div>
             </div>
         </div>
     </div>

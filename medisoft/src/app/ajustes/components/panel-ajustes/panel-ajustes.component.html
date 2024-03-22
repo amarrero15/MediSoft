@@ -1,1 +1,14 @@
-<p>panel-ajustes works!</p>
+<app-header></app-header>
+<div >
+    <mat-tab-group animationDuration="1000ms">
+        <mat-tab label="Agregar Usuarios" >
+          <app-nuevo-usuario></app-nuevo-usuario>
+        </mat-tab>
+        <mat-tab label="Lista de Usuarios">
+            <app-lista-usuarios></app-lista-usuarios>
+        </mat-tab>
+        <mat-tab label="Padecimientos">
+          <app-padecimientos></app-padecimientos>
+        </mat-tab>
+      </mat-tab-group>
+</div>

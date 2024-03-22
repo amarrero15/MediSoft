@@ -66,6 +66,13 @@ export class ListaMedicamentosComponent implements AfterViewInit {
     
   }
   
-  deletePaciente(paciente: any){}
+  deleteMedicamento(medicamento: any, index: any){
+    this.farmaciaService.deleteMedicamento(medicamento.idMedicamento).subscribe(res=>{
+      this.dataSource.data.splice(index, 1);
+      this.farmaciaService.getMedicamentos().subscribe(res=>{
+        this.dataSource =new MatTableDataSource(res as IMedicamento[]);
+      })
+    })
+  }
 
 }
